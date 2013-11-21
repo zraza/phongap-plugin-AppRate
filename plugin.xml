@@ -13,7 +13,7 @@
 		<engine name="cordova" version=">=3.0.0" />
 	</engines>
 
-	<dependency id="org.apache.cordova.core.dialogs"
+	<dependency id="org.apache.cordova.dialogs"
 				url="https://git-wip-us.apache.org/repos/asf/cordova-plugin-dialogs.git"/>
 
 	<js-module src="www/AppRate.js" name="AppRate">
