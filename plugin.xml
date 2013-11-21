@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
-		id="org.pushandplay.cordova.apprate"
+		id="org.zraza.phonegap.apprate"
 		version="0.0.7">
 	<name>AppRate</name>
-	<description>Cordova AppRate Plugin</description>
+	<description>Phonegap AppRate Plugin</description>
 	<author>zraza</author>
 	<license>The MIT License</license>
 	<keywords>cordova,phonegap,App Rate,rate, IOS App Rate, Andriod App Rate</keywords>
 
 	<engines>
-		<engine name="cordova" version="<=3.0.0" />
+		<engine name="cordova" version=">=3.0.0" />
 	</engines>
 
 	<dependency id="org.apache.cordova.core.dialogs"
 				url="https://git-wip-us.apache.org/repos/asf/cordova-plugin-dialogs.git"/>
 
 	<js-module src="www/AppRate.js" name="AppRate">
-		<clobbers target="navigator.apprate"/>
+		<clobbers target="navigator.AppRate"/>
 	</js-module>
 
 	<!-- android -->
