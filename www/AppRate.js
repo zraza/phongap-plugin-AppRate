@@ -74,7 +74,7 @@ var AppRate = (function() {
         switch (buttonIndex) {
             case 1:
                 _disablePrompt();
-                setTimeout(navigateToAppStore, 1000);
+                setTimeout(_navigateToAppStore, 1000);
                 break;
             case 2:
                 break;
