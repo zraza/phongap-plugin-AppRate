@@ -107,3 +107,4 @@ var AppRate = (function() {
     return _api;
 
 })();
+module.exports = AppRate;
