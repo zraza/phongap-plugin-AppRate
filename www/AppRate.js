@@ -6,7 +6,7 @@ var AppRate = (function() {
 
     // Default Configurations
     var _config = {
-        waitCount: 5,
+        waitCount: 4,
         waitPermanentDisable: 4,
         countResume: true,
         iosAppId: '',
@@ -61,7 +61,8 @@ var AppRate = (function() {
      */
     var _navigateToAppStore = function() {
         if (/(iPhone|iPod|iPad)/i.test(navigator.userAgent.toLowerCase())) {
-            window.open("itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=" + _config.iosAppId);
+            window.open("itms-apps://itunes.apple.com/app/id" + _config.iosAppId);
+            //window.open("itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=" + _config.iosAppId);
         } else if (/(Android)/i.test(navigator.userAgent.toLowerCase())) {
             window.open("market://details?id=" + _config.androidAppId, "_system");
         }
