@@ -56,15 +56,25 @@ var AppRate = (function() {
         _updateState();
     };
 
+    var _getAppLink = function() {
+        if (/(iPhone|iPod|iPad)/i.test(navigator.userAgent.toLowerCase())) {
+            return "itms-apps://itunes.apple.com/app/id" + _config.iosAppId;
+        } else if (/(Android)/i.test(navigator.userAgent.toLowerCase())) {
+            return "market://details?id=" + _config.androidAppId;
+        }
+    }
+
     /**
      * Open App stores for review
      */
-    var _navigateToAppStore = function() {
+    var _navigateToAppStore = function(disable) {
+        if (disable) {
+            _disablePrompt();
+        }
         if (/(iPhone|iPod|iPad)/i.test(navigator.userAgent.toLowerCase())) {
-            window.open("itms-apps://itunes.apple.com/app/id" + _config.iosAppId);
-            //window.open("itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=" + _config.iosAppId);
+            window.open(_getAppLink());
         } else if (/(Android)/i.test(navigator.userAgent.toLowerCase())) {
-            window.open("market://details?id=" + _config.androidAppId, "_system");
+            window.open(_getAppLink(), "_system");
         }
     };
 
@@ -105,6 +115,7 @@ var AppRate = (function() {
     _api.init = _init;
     _api.navigateToAppStore = _navigateToAppStore;
     _api.prompt = _prompt;
+    _api.getAppLink = _getAppLink;
     return _api;
 
 })();
